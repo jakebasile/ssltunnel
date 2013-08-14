@@ -6,11 +6,14 @@ Do you want to feel **uncomfortably secure**, but don't want to set up a real SS
 
 ## Installation
 
+If you don't have [Go][] on your system, I have some [precompiled binaries available][releases]. I don't have access to test all of them though so if there is a problem please let me know.
+
 If you have Go installed on your system:
 
 ```bash
 $ go install github.com/jakebasile/ssltunnel
 ```
+
 
 ## Usage
 
@@ -27,3 +30,6 @@ $ ssltunnel -in 8080 -out 8443 -h superspecial.example.com,superspecial2.example
 Then, you can either modify your `/etc/hosts` file to point those host names to `127.0.0.1` or set up your own DNS magic.
 
 *NOTE*: If you want to change the hostname you need to delete the key and cert file already generated.
+
+[releases]: https://github.com/jakebasile/ssltunnel/releases
+[Go]: http://golang.org/
