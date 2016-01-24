@@ -26,8 +26,8 @@ var (
 )
 
 func init() {
-	flag.IntVar(&inport, "in", 80, "The local port to wrap with SSL.")
-	flag.IntVar(&outport, "out", 443, "The serve port to bind to.")
+	flag.IntVar(&inport, "wrap", 80, "The local port to wrap with SSL.")
+	flag.IntVar(&outport, "serve", 443, "The serve port to bind to.")
 	flag.StringVar(&hosts, "hosts", "localhost", "A comma separated list of hostnames to serve.")
 }
 

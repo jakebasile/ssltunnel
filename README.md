@@ -17,7 +17,7 @@ $ go get github.com/jakebasile/ssltunnel
 ## Usage
 
 ```bash
-$ ssltunnel -in 8080 -out 8443
+$ ssltunnel -wrap 8080 -serve 8443
 ```
 
 This will start listening on `0.0.0.0:8443` with SSL, proxying all requests to `127.0.0.1:8080`. It automatically makes a self signed cert covering the ip address `0.0.0.0`. If you want to use a special hostname, do this instead:
