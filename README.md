@@ -11,9 +11,8 @@ If you don't have [Go][] on your system, I have some [precompiled binaries avail
 If you have Go installed on your system:
 
 ```bash
-$ go install github.com/jakebasile/ssltunnel
+$ go get github.com/jakebasile/ssltunnel
 ```
-
 
 ## Usage
 
