@@ -90,12 +90,20 @@ func genCert() {
 		log.Fatal("Unable to write certificate file.")
 	}
 	defer cert.Close()
-	pem.Encode(cert, &pem.Block{Type: "CERTIFICATE", Bytes: certBytes})
+	err = pem.Encode(cert, &pem.Block{Type: "CERTIFICATE", Bytes: certBytes})
+	if err != nil {
+		log.Println(err)
+		log.Fatal("Unable to PEM encode certificate.")
+	}
 	key, err := os.OpenFile("key", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
 	if err != nil {
 		log.Println(err)
 		log.Fatal("Unable to write key file.")
 	}
 	defer key.Close()
-	pem.Encode(key, &pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(priv)})
+	err = pem.Encode(key, &pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(priv)})
+	if err != nil {
+		log.Println(err)
+		log.Fatal("Unable to PEM encode private key.")
+	}
 }
